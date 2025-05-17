@@ -2,7 +2,7 @@
   "name": "@solarspace-dev/vscode-eth-clone",
   "displayName": "Eth Clone",
   "description": "Clone verified smart contracts from Ethereum",
-  "version": "0.0.1-alpha.2",
+  "version": "0.0.1-alpha.3",
   "engines": {
     "vscode": "^1.72.0"
   },
@@ -15,7 +15,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "eth-clone.cloneContract",
+        "command": "vscode-eth-clone.cloneContract",
         "title": "Clone Contract"
       }
     ]

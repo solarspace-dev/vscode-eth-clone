@@ -4,12 +4,12 @@ import * as vscode from 'vscode';
 import { paths } from "./sourcify";
 
 export function activate(context: vscode.ExtensionContext) {
-	console.log('Congratulations, your extension "eth-clone" is now active!');
+	console.log('Congratulations, your extension "vscode-eth-clone" is now active!');
 
 	const push = context.subscriptions.push.bind(context.subscriptions);
 	const registerCommand = vscode.commands.registerCommand.bind(vscode.commands);
 
-	push(registerCommand('eth-clone.cloneContract', async () => {
+	push(registerCommand('vscode-eth-clone.cloneContract', async () => {
 		const fs = vscode.workspace.fs;
 		const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
 		console.dir(workspaceFolder);
@@ -52,7 +52,7 @@ export function activate(context: vscode.ExtensionContext) {
 		} catch (error) {
 			const action = await vscode.window.showErrorMessage(`Failed to fetch contract for an unkown reason.`, 'Report Issue');
 			if (action === 'Report Issue') {
-				const issueUrl = 'https://github.com/RaoulSchaffranek/eth-clone/issues';
+				const issueUrl = 'https://github.com/solarspace-dev/vscode-eth-clone/issues';
 				vscode.env.openExternal(vscode.Uri.parse(issueUrl));
 			}
 		}
