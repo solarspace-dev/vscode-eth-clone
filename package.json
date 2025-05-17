@@ -1,0 +1,52 @@
+{
+  "name": "@solarspace-dev/vscode-eth-clone",
+  "displayName": "Eth Clone",
+  "description": "Clone verified smart contracts from Ethereum",
+  "version": "0.0.1-alpha.1",
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "eth-clone.cloneContract",
+        "title": "Clone Contract"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package-web",
+    "lint": "eslint src",
+    "compile-web": "webpack",
+    "watch-web": "webpack --watch",
+    "package-web": "webpack --mode production --devtool hidden-source-map"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.100.0",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.13.0",
+    "openapi-typescript": "^7.8.0",
+    "openapi-typescript-fetch": "^2.2.0",
+    "typescript": "^5.6.3",
+		"webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+		"ts-loader": "^9.5.2"
+  },
+  "dependencies": {
+    "openapi-fetch": "^0.14.0"
+  },
+	"publishConfig": {
+		"access": "public",
+    	"registry": "https://npm.pkg.github.com"
+	}
+}
