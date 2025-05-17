@@ -12,6 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
 	push(registerCommand('eth-clone.cloneContract', async () => {
 		const fs = vscode.workspace.fs;
 		const workspaceFolder = vscode.workspace.workspaceFolders?.[0];
+		console.dir(workspaceFolder);
 		if (!workspaceFolder) {
 			vscode.window.showErrorMessage('No workspace folder found. Please open a folder first.');
 			return;
